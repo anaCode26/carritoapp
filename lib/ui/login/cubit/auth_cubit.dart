@@ -10,10 +10,6 @@ class AuthCubit extends Cubit<AuthState> {
     required this.authRepository,
   }) : super(AuthInitial());
 
-  /// Inicia sesión con las credenciales proporcionadas.<br />
-  ///
-  /// * Si las credenciales son válidas, se emite [AuthSuccess].
-  /// * Si las credenciales son inválidas, se emite [AuthError].
   Future<void> login({required String username, required String password}) async {
     try {
       emit(AuthLoading());

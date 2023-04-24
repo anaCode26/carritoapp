@@ -12,10 +12,6 @@ class ProductCubit extends Cubit<ProductState> {
     required this.productRepository,
   }) : super(ProductInitial());
 
-  /// Obtiene todos los productos
-  ///
-  /// * Si la petición es exitosa, se emite [ProductsLoaded].
-  /// * Si la petición falla, se emite [ProductsError].
   Future<void> getProducts() async {
     try {
       emit(ProductsLoading());
@@ -26,10 +22,6 @@ class ProductCubit extends Cubit<ProductState> {
     }
   }
 
-  /// Obtiene todos los productos que coincidan con la búsqueda
-  ///
-  /// * Si la petición es exitosa, se emite [ProductsLoaded].
-  /// * Si la petición falla, se emite [ProductsError].
   Future<void> searchProducts(String query) async {
     try {
       emit(ProductsLoading());
@@ -41,10 +33,6 @@ class ProductCubit extends Cubit<ProductState> {
     }
   }
 
-  /// Obtiene un producto por su id
-  ///
-  /// * Si la petición es exitosa, se emite [ProductLoaded].
-  /// * Si la petición falla, se emite [ProductError].
   Future<void> getSingleProduct(int id) async {
     try {
       emit(ProductLoading());
@@ -55,10 +43,6 @@ class ProductCubit extends Cubit<ProductState> {
     }
   }
 
-  /// Agrega un producto al carrito
-  ///
-  /// * Si la petición es exitosa, se emite [ProductAddedToCart].
-  /// * Si la petición falla, se emite [ProductNotAddedToCart].
   Future<void> addProductToCart(Product product) async {
     try {
       emit(ProductAddedToCartLoading());

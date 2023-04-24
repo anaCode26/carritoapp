@@ -15,13 +15,10 @@ class HTTPRepository {
       };
   }
 
-  /// Maneja los errores de la petición HTTP y los rechaza con el error original
-  /// para que sea manejado por el cubit correspondiente y no por el interceptor.
   void _onErrorHandler(DioError dioError, ErrorInterceptorHandler handler) {
     handler.reject(DioError(requestOptions: dioError.requestOptions, error: dioError.error));
   }
 
-  /// Realiza una petición GET al servidor con los parámetros proporcionados
   Future<Response> get(String path, {Options? options, Map<String, dynamic> queryParameters = const {}}) async {
     return await _dio.get(
       path,
@@ -30,7 +27,6 @@ class HTTPRepository {
     );
   }
 
-  /// Realiza una petición POST al servidor con los parámetros proporcionados
   Future<Response> post(String path, {data, Options? options, Map<String, dynamic> queryParameters = const {}}) async {
     return await _dio.post(
       path,

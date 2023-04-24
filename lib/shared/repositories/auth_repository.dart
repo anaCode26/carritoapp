@@ -9,7 +9,6 @@ class AuthRepository {
     required this.httpRepository,
   });
 
-  /// Inicia sesión con las credenciales proporcionadas
   Future<Response> login(String username, String password) async {
     return await httpRepository.post(
       '$baseUrl$loginEndpoint',

@@ -103,7 +103,6 @@ class ProductsScreenState extends State<ProductsScreen> {
     );
   }
 
-  /// Este método se encarga de escuchar los cambios en el estado del cubit
   void productCubitListener(context, state) {
     if (state is ProductsError) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.message)));

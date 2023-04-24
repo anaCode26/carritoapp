@@ -92,7 +92,6 @@ class ProductDetailsScreenState extends State<ProductDetailsScreen> {
     );
   }
 
-  /// Este método se encarga de escuchar los cambios en el estado del cubit
   void productCubitListener(context, state) {
     switch (state.runtimeType) {
       case ProductAddedToCartLoading:

@@ -5,13 +5,11 @@ import 'package:carritoapp/ui/login/cubit/auth_cubit.dart';
 import 'package:carritoapp/ui/products/cubit/product_cubit.dart';
 import 'package:get_it/get_it.dart';
 
-/// Inicializa las dependencias de la aplicación.
 Future<void> setupDependencyInjection(GetIt di) async {
   await setupRepositories(di);
   await setupCubits(di);
 }
 
-/// Registro los repositorios que serán usados por la aplicación.
 Future<void> setupRepositories(GetIt di) async {
   di.registerSingletonAsync<HTTPRepository>(() async => HTTPRepository());
   di.registerSingletonAsync<AuthRepository>(
@@ -32,7 +30,6 @@ Future<void> setupRepositories(GetIt di) async {
   );
 }
 
-/// Registro los cubits que serán usados por la aplicación.
 Future<void> setupCubits(GetIt di) async {
   di.registerSingletonAsync<AuthCubit>(
     () async => AuthCubit(
@@ -53,7 +50,6 @@ Future<void> setupCubits(GetIt di) async {
   );
 }
 
-/// Chequea que todas las dependencias estén inicializadas
 Future<void> checkIfDependenciesAreInitialized(GetIt di) {
   return di.allReady();
 }
