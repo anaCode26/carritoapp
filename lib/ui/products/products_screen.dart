@@ -46,7 +46,7 @@ class ProductsScreenState extends State<ProductsScreen> {
               decoration: const InputDecoration(
                 filled: true,
                 fillColor: secondaryColor,
-                hintText: 'Buscar producto',
+                hintText: 'Search product',
                 suffixIcon: Icon(Icons.search),
                 contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 14.0),
                 border: OutlineInputBorder(borderSide: BorderSide.none, borderRadius: BorderRadius.all(Radius.circular(50.0))),
@@ -71,7 +71,7 @@ class ProductsScreenState extends State<ProductsScreen> {
                       return Card(
                         child: ListTile(
                             contentPadding: const EdgeInsets.all(10),
-                            title: Text(product.title),
+                            title: Text(product.title, style: const TextStyle(color: primaryColor)),
                             subtitle: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[

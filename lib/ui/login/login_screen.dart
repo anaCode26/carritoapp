@@ -42,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 const Spacer(),
-                const Text('Bienvenido',
+                const Text('Welcome',
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: const InputDecoration(
                     filled: true,
                     fillColor: secondaryColor,
-                    hintText: 'Usuario',
+                    hintText: 'User',
                     prefixIcon: Icon(Icons.account_circle_outlined),
                     contentPadding: EdgeInsets.symmetric(vertical: 14.0),
                     border: OutlineInputBorder(borderSide: BorderSide.none, borderRadius: BorderRadius.all(Radius.circular(50.0))),
@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: secondaryColor,
-                      hintText: 'Contraseña',
+                      hintText: 'Password',
                       prefixIcon: const Icon(Icons.lock_outline),
                       contentPadding: const EdgeInsets.symmetric(vertical: 14.0),
                       suffixIcon: IconButton(
@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50.0),
                     ))),
-                    child: const Text('Ingresar'),
+                    child: const Text('Login'),
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -103,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.message)));
     }
     if (state is AuthSuccess) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Ingreso exitoso')));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Login success')));
       Navigator.of(context).pushNamed(productsRoute);
     }
   }

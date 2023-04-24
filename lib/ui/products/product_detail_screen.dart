@@ -81,7 +81,7 @@ class ProductDetailsScreenState extends State<ProductDetailsScreen> {
                               shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(50.0),
                           ))),
-                          child: const Text('Agregar al carrito'),
+                          child: const Text('Add to cart'),
                         ),
                       ),
               ],
@@ -104,7 +104,7 @@ class ProductDetailsScreenState extends State<ProductDetailsScreen> {
           showSpinner = false;
         });
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text('Producto agregado al carrito'),
+          content: Text('Added to cart'),
           backgroundColor: Colors.green,
         ));
         break;

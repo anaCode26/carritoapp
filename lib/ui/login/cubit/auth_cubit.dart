@@ -16,7 +16,7 @@ class AuthCubit extends Cubit<AuthState> {
       await authRepository.login(username, password);
       emit(AuthSuccess());
     } catch (e) {
-      emit(AuthError('Credenciales inválidas.'));
+      emit(AuthError('Invalid credentials.'));
     }
   }
 }
